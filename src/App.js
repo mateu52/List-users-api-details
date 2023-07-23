@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React, { useState, useEffect } from 'react';
+import UserList from './components/UserList';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import UserDeatils from './components/UserDetails';
 function App() {
+  const [ users, setUsers ] = useState([]);
+    useEffect(() => {
+        fetch('https://randomuser.me/api/?results=10')
+            .then(response => response.json())
+            .then(data => setUsers(data.results))
+            .catch(error => console.log(error))
+    },[])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <div>
+          <nav>
+            <p>
+              <Link to="/" style={{ textDecoration: "none", color: "black"}}>Lista</Link>
+            </p>
+          </nav>
+          <Routes>
+            <Route path="/users/:id" element={<UserDeatils users={users} />} />
+            <Route exact path="/" element={<UserList users={users} />} />
+          </Routes>
+        </div>
+      </Router>
+      
     </div>
   );
 }

@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+.users {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: antiquewhite;
+}
+
+.user {
+    height: 270px;
+    width: 250px;
+    margin: 5px;
+    background-color: aliceblue;
+    padding: 5px;
+    font-size: 14px;
+    border: solid 1px rgb(171, 205, 255);
+}
+.user--name {
+    font-size: 18px;
+}
+.user--img {
+    width: 125px;
+    height: 125px;
+}
+.user p{
+    padding: 2px;
+}
