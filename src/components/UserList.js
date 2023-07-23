@@ -2,15 +2,17 @@ import React from 'react';
 import User from './User';
 import { Link } from 'react-router-dom';
 import './style.css';
-
-function UserList({ users }){
+import { Eclipse } from "react-loading-io";
+function UserList({ users, loading }){
     return(
+        <div>
+        {loading ? <Eclipse size={164} /> :
         <div className='users'>
             {users.map((user) => {
                 return(
                     <div key={user.login.uuid}>
                         <Link to={`/users/${user.login.uuid}`}>
-                            <User
+                            <User loading={loading}
                                 name={user.name.first}
                                 surname={user.name.last}
                                 street={user.location.street.name}
@@ -24,6 +26,8 @@ function UserList({ users }){
                     </div>
                 )
             })}
+        </div>
+        }
         </div>
     )
 }

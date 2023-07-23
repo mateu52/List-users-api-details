@@ -2,6 +2,7 @@ import React from "react";
 import './style.css';
 function User( props ){
     return(
+        
         <div className="user">
             <p><img alt="img" className="user--img" src={props.picture}></img></p>
             <p className="user--name">
