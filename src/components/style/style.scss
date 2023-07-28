@@ -1,0 +1,62 @@
+$color_1: black;
+$background-color_1: -webkit-linear-gradient(90deg, rgba(0, 4, 255, 0.508), rgb(102, 222, 249));;
+$background-color_2: rgba(30, 255, 45, 0);
+$background-color_3: rgba(248, 245, 245, 0.168);
+$background-color_4:-webkit-linear-gradient(270deg, rgba(76, 254, 76, 0.603), rgba(255, 255, 255, 0.331));;
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	text-decoration: none;
+	background: $background-color_1;
+}
+.title {
+	font-size: 24px;
+	margin: 15px auto;
+	background-color: $background-color_1;
+}
+.users {
+	display: flex;
+    justify-content: center;
+	flex-wrap: wrap;
+	color: $color_1;
+}
+.user-container {
+	padding: 20px;
+}
+.user {
+	height: 290px;
+	width: 265px;
+	color: $color_1;
+	padding: 5px;
+	padding:25px ;
+	font-size: 14px;
+	border: solid 1px rgb(171, 205, 255);
+	p {
+		font-family:Arial, Helvetica, sans-serif ;
+		padding: 1px;
+		border-radius: 10px;
+		margin:auto auto;
+		font-weight: 500;
+	}
+}
+.user--p {
+	z-index: 1;
+	background: $background-color_3;
+}
+.user-details {
+	margin: 0 auto;
+	padding: 0 auto;
+}
+.user--img {
+	margin:5px 0 0 0;
+	border-radius: 15px;
+}
+.user--name {
+	font-size: 18px;
+}
+.user--img {
+	width: 125px;
+	height: 125px;
+}

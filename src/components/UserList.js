@@ -1,7 +1,7 @@
 import React from 'react';
 import User from './User';
 import { Link } from 'react-router-dom';
-import './style.css';
+import './style/style.css';
 import { Eclipse } from "react-loading-io";
 function UserList({ users, loading }){
     return(
@@ -10,7 +10,7 @@ function UserList({ users, loading }){
         <div className='users'>
             {users.map((user) => {
                 return(
-                    <div key={user.login.uuid}>
+                    <div key={user.login.uuid} className='user-container'>
                         <Link to={`/users/${user.login.uuid}`}>
                             <User loading={loading}
                                 name={user.name.first}

@@ -24,7 +24,7 @@ function App() {
       <Router>
         <div>
           <nav>
-            <p>
+            <p className='title'>
               <Link to="/" style={{ textDecoration: "none", color: "black"}}>Lista</Link>
             </p>
           </nav>
